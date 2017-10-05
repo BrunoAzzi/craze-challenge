@@ -1,0 +1,15 @@
+<div class="testimonial">
+  <ul class="slider">
+    <li *ngFor="let slide of slideList; let i = index">
+      <div *ngIf="!slide.hidden" [@enterAnimation] [style.z-index]="i">
+        <h3>“Craze is one of the most complete app packages I have ever come across. I would highly reccomend it to anyone!”</h3>
+        <p>Sarah Hunt</p>
+      </div>
+    </li>
+  </ul>
+  <ul class="dots">
+    <li *ngFor="let slide of slideList; let i = index">
+      <a class="dot" [ngClass]="{ active: !slide.hidden }" (click)="showSlide(i)"></a>
+    </li>
+  </ul>
+</div>

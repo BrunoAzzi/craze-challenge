@@ -1,0 +1,75 @@
+@import "../../../scss/layout";
+@import "../../../scss/color";
+
+.testimonial {
+  @include flex-column;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+
+  @media (min-width: 768px) {
+    padding: 60px 20px;
+  }
+
+  .slider ul{
+    div {
+      width: 100%;
+      position: relative;
+      top: 0;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 200;
+
+    @media (min-width: 480px) {
+      padding: 0px 0px 25px;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    font-style: italic;
+    color: $default-text-color;
+  }
+
+  p {
+    color: $title-color;
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+
+    a {
+      background: none;
+      border: 1px solid $accent-color;
+      display: block;
+      width: 15px;
+      height: 15px;
+      margin: 0 5px;
+      outline: 0;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background: $accent-color;
+      }
+
+      &.active {
+        background: $accent-color;
+      }
+    }
+  }
+}
+
+.dots {
+  @include flex-row;
+}

@@ -1,0 +1,77 @@
+@import "../../../scss/layout";
+@import "../../../scss/color";
+
+.pricing {
+  @include flex-column;
+  padding: 30px 20px;
+  background: $gray-background;
+  text-align: center;
+
+  .mainprice {
+    @include flex-column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      @include flex-row;
+      justify-content: center;
+    }
+  }
+
+  .oneprice {
+    background: white;
+    margin: 10px;
+    width: 100%;
+
+    @media (min-width: $small-viewport) {
+      width: 285px;
+    }
+
+    @media (min-width: $medium-viewport) {
+      width: 170px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 236px;
+    }
+
+    @media (min-width: $extra-large-viewport) {
+      width: 285px;
+    }
+
+    h3 {
+      background: $accent-color;
+      color: white;
+      padding: 15px 0;
+    }
+
+    h4 {
+      font-size: 42px;
+      padding: 20px 0;
+      font-weight: normal;
+    }
+
+    p {
+      padding: 10px 0;
+      border-top: 1px solid $divider-color;
+      margin: 0 15px;
+    }
+
+    span {
+      display: block;
+      padding: 20px 0;
+      background: $accent-color;
+
+      a {
+        width: 137px;
+        height: 40px;
+        line-height: 40px;
+        color: white;
+        background: #0d74b9;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import "../../../scss/layout";
+@import "../../../scss/color";
+
+footer {
+  padding: 30px 20px;
+  background: $gray-background;
+
+  ul {
+    @include flex-row;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding-right: 10px;
+    }
+  }
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: $default-text-color;
+}
+
+footer ul li a:hover {
+  color: $accent-color;
+  transition: all 0.5s;
+}

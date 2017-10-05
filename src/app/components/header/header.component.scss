@@ -1,0 +1,84 @@
+@import "../../../scss/layout";
+@import "../../../scss/color";
+
+header {
+  @include flex-row;
+  justify-content: center;
+  width: 100vw;
+  min-height: $small-banner-size;
+  background: url('/assets/images/banner.jpg') no-repeat center center;
+  background-size: cover;
+
+  @media (min-width: $large-viewport) {
+    min-height: $large-banner-size;
+  }
+
+  .title {
+    @include flex-column;
+    justify-content: center;
+    text-align: center;
+    margin: 40px;
+
+    @media (min-width: $medium-viewport) {
+      text-align: start;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      max-width: 495px;
+      color: white;
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 500;
+
+      @media (min-width: $large-viewport) {
+        padding-right: 60px;
+      }
+    }
+  }
+
+  .apps {
+    padding-top: 20px;
+
+    a {
+      width: $apps-icon-size;
+      height: $apps-icon-size;
+      line-height: 53px;
+      border-radius: 50%;
+      background: rgba(3,3,3,0.5);
+      color: rgba(244,244,244,0.5);
+      margin-right: 10px;
+      display: inline-block;
+      font-size: 24px;
+      text-align: center;
+
+      &:hover {
+        background: black;
+        color: white;
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  .hand {
+    display: none;
+
+    @media (min-width: $medium-viewport) {
+      @include flex-column;
+      justify-content: flex-end;
+    }
+
+    img {
+      @media (min-width: $medium-viewport) {
+        max-width: 345px;
+      }
+
+      @media (min-width: $large-viewport) {
+        max-width: none;
+      }
+    }
+  }
+}

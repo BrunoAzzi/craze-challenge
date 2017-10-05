@@ -1,0 +1,20 @@
+$extra-large-viewport: 1190px;
+$large-viewport: 960px;
+$medium-viewport: 768px;
+$small-viewport: 480px;
+
+$large-banner-size: 600px;
+$small-banner-size: 435px;
+
+$apps-icon-size: 53px;
+$social-icon-size: 34px;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}

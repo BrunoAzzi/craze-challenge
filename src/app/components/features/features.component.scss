@@ -1,0 +1,77 @@
+@import "../../../scss/layout";
+@import "../../../scss/color";
+
+:host {
+  @include flex-column;
+  align-items: center;
+  text-align: center;
+}
+
+.features {
+  padding: 30px 15px;
+  max-width: $large-viewport;
+}
+
+.title {
+  margin: 20px;
+}
+
+.line1 {
+  display: none;
+
+  @media (min-width: $medium-viewport) {
+    width: 190px;
+    display: inline-block;
+    height: 1px;
+    background: $divider-color;
+    position: relative;
+    top: 10px;
+    right: 0px;
+  }
+
+  @media (min-width: 885px) {
+    width: 245px;
+  }
+
+  @media (min-width: $large-viewport) {
+    width: 275px;
+  }
+}
+
+.feature-list {
+  @include flex-column;
+  padding: 25px 0;
+}
+
+.feature-list-row {
+  @include flex-column;
+
+  @media (min-width: $medium-viewport) {
+    flex-direction: row;
+  }
+
+  & > div:last-child .feature {
+    border: none;
+  }
+
+  &:last-child > div {
+    margin-top: 25px;
+  }
+}
+
+.feature .lnr {
+  display: block;
+  padding: 20px 0;
+  font-size: 50px;
+  color: $accent-color;
+}
+
+.feature {
+  @include flex-column;
+  border: none;
+  padding: 15px;
+
+  @media (min-width: $medium-viewport) {
+    border-right: 1px solid $divider-color;
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../../scss/layout";
+@import "../../../scss/color";
+
+.social {
+  @include flex-column;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+h3 {
+  line-height: 30px;
+}
+
+.social a i {
+  display: inline-block;
+  width: $social-icon-size;
+  height: $social-icon-size;
+  line-height: 34px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  background: #d4d4d4;
+  margin: 10px;
+  font-size: 18px;
+
+  &:hover {
+    background: $accent-color;
+    transition: all 0.5s;
+  }
+}

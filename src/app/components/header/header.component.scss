@@ -1,32 +1,8 @@
-$large-viewport: 960px;
-$medium-viewport: 768px;
-
-$large-banner-size: 600px;
-$small-banner-size: 435px;
-
-$apps-icon-size: 53px;
-
-@mixin apps-icons() {
-  width: $apps-icon-size;
-  height: $apps-icon-size;
-  line-height: 53px;
-  border-radius: 50%;
-  background: rgba(3,3,3,0.5);
-  color: rgba(244,244,244,0.5);
-  margin-right: 10px;
-  display: inline-block;
-  font-size: 24px;
-  text-align: center;
-
-  &:hover {
-    background: black;
-    color: white;
-    transition: all 0.5s;
-  }
-}
+@import "../../../scss/layout";
+@import "../../../scss/color";
 
 header {
-  display: flex;
+  @include flex-row;
   justify-content: center;
   width: 100vw;
   min-height: $small-banner-size;
@@ -38,38 +14,60 @@ header {
   }
 
   .title {
+    @include flex-column;
+    justify-content: center;
+    text-align: center;
     margin: 40px;
 
     @media (min-width: $medium-viewport) {
       text-align: start;
     }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    h1 {
+      margin-bottom: 30px;
+    }
 
     h2 {
-      @media (min-width: $large-viewport) {
-        padding-right: 60px;
-      }
-
       max-width: 495px;
       color: white;
       font-size: 24px;
       line-height: 36px;
       font-weight: 500;
+
+      @media (min-width: $large-viewport) {
+        padding-right: 60px;
+      }
     }
   }
 
-  .apps a {
-    @include apps-icons();
+  .apps {
+    padding-top: 20px;
+
+    a {
+      width: $apps-icon-size;
+      height: $apps-icon-size;
+      line-height: 53px;
+      border-radius: 50%;
+      background: rgba(3,3,3,0.5);
+      color: rgba(244,244,244,0.5);
+      margin-right: 10px;
+      display: inline-block;
+      font-size: 24px;
+      text-align: center;
+
+      &:hover {
+        background: black;
+        color: white;
+        transition: all 0.5s;
+      }
+    }
   }
 
   .hand {
+    display: none;
+
     @media (min-width: $medium-viewport) {
-      display: flex;
-      flex-direction: column;
+      @include flex-column;
       justify-content: flex-end;
     }
 
@@ -79,10 +77,8 @@ header {
       }
 
       @media (min-width: $large-viewport) {
-          max-width: none;
+        max-width: none;
       }
     }
-
-    display: none;
   }
 }

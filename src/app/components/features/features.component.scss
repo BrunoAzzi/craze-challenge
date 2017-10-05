@@ -1,40 +1,32 @@
-$large-viewport: 960px;
-$medium-viewport: 768px;
-$extra-large-viewport: 1190px;
+@import "../../../scss/layout";
+@import "../../../scss/color";
 
 :host {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   align-items: center;
+  text-align: center;
 }
 
 .features {
   padding: 30px 15px;
-  max-width: 1170px;
+  max-width: $large-viewport;
 }
 
 .title {
-  text-align: center;
   margin: 20px;
-
-  h3 {
-    font-family: "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
-    font-size: 30px;
-    line-height: 18px;
-    color: #222222;
-    font-weight: 600;
-  }
 }
 
 .line1 {
+  display: none;
+
   @media (min-width: $medium-viewport) {
-    width: 210px;
+    width: 190px;
     display: inline-block;
     height: 1px;
-    background: #e3e3e3;
+    background: $divider-color;
     position: relative;
     top: 10px;
-    right: -18px;
+    right: 0px;
   }
 
   @media (min-width: 885px) {
@@ -44,27 +36,15 @@ $extra-large-viewport: 1190px;
   @media (min-width: $large-viewport) {
     width: 275px;
   }
-
-  @media (min-width: 1120px) {
-    width: 315px;
-  }
-
-  @media (min-width: $extra-large-viewport) {
-    width: 345px;
-  }
 }
 
 .feature-list {
+  @include flex-column;
   padding: 25px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .feature-list-row {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
 
   @media (min-width: $medium-viewport) {
     flex-direction: row;
@@ -80,27 +60,18 @@ $extra-large-viewport: 1190px;
 }
 
 .feature .lnr {
-  font-size: 50px;
-  color: #3498db;
-  padding: 20px 0;
   display: block;
+  padding: 20px 0;
+  font-size: 50px;
+  color: $accent-color;
 }
 
 .feature {
+  @include flex-column;
   border: none;
   padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
 
   @media (min-width: $medium-viewport) {
-    border-right: 1px solid #e3e3e3;
-  }
-
-  h4 {
-    font-size: 24px;
-    color: #222222;
-    font-weight: 600;
+    border-right: 1px solid $divider-color;
   }
 }
